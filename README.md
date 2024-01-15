@@ -1,4 +1,4 @@
-# Build Processes Demo
+# FSE Pilot Project
 
 This is a demo project for showcasing standardized build processes of theme and plugin assets. Learn more about it in the [Soft Launch](https://wpspecialprojectsp2.wordpress.com/2023/01/26/front-end-build-processes-task-force-product-soft-launch/) post.
 
@@ -13,66 +13,6 @@ The `git` repository only keeps track of **custom** content inside the `wp-conte
 - the `mu-plugins` directory
 
 As a rule of thumb, if there is another source of updates for a piece of code, it must not be tracked via the repository (e.g., off-the-shelf plugins or parent themes).
-
-### Theme Structure
-
-This demo project contains a theme called `fse-pilot` which is a child theme of the [Blockbase](https://wordpress.org/themes/blockbase/) theme. Using Blockbase is **not** a requirement, but it is a good example of a FSE theme.
-
-The usage of a child theme is strongly encouraged even if the project is built upon a Twenty\* theme. Rather than modifying the theme directly and disabling updates by renaming it, it is better to create a child theme and use the Twenty\* theme as a parent theme. That way, we can still benefit from fixes in the template theme **and** it makes it much easier to figure out what the customizations were when the inevitable redesign rolls around in 3-5 years.
-
-In general, any active theme on the site should contain the following folder structure:
-
-```console
-.
-├── assets           	# Main assets folder
-│   ├── img/**         	  # Image assets folder
-│   └── css            	  # Single-purpose CSS assets folder
-│        ├── build/**       		    
-│        └── src/**         		    
-│   ├── js             	  # JS assets folder
-│        ├── build/**       		    
-│        └── src/**         			
-│   ├── sass           	  # SCSS folder for the main stylesheet
-│        ├── abstracts/
-│        	├── _variables.scss
-│        	├── _mixins.scss
-│        	├── _helpers.scss
-│        	├── ...
-│        	└── _functions.scss
-│        ├── base/
-│        	├── _theme-details.scss
-│        	├── _reset.scss
-│        	├── _typography.scss
-│        	├── ...
-│        	└── _utilities.scss      
-│        ├── components/
-│        	├── _buttons.scss
-│        	├── _forms.scss
-│        	├── _tables.scss
-│        	├── ...
-│        	└── _tooltips.scss
-│        ├── layout/
-│        	├── _header.scss
-│        	├── _footer.scss
-│        	├── _sidebar.scss
-│        	├── ...
-│        	└── _content.scss  
-│        ├── ...
-│        ├── style.scss 
-│        ├── style-editor.scss
-├── includes/**        	# PHP files (classes, functions, etc)
-├── languages/**       	# POT and translations folder
-├── parts/**            # FSE Theme template parts
-├── patterns/**       	# FSE Theme template patterns
-├── templates/**       	# FSE Theme full templates
-├── functions.php    	# Theme functions file
-├── style.css        	# Theme CSS file compiled from SCSS
-├── style-editor.css	# Editor CSS file compiled from SCSS
-├── theme.json      	# Theme variable definitions
-.
-```
-
-As for the structure of the `assets/sass` folder and of the files therein, we recommend reading [this helpful gist](https://gist.github.com/AdamMarsden/7b85e8d5bdb5bef969a0). While we don't follow the exact same structure (e.g., we would like page-specific CSS to **not** be part of `style.css`), it encapsulates the general idea of how we want to structure the SCSS files.
 
 ### FSE Templates, Parts, Patterns, and `theme.json`
 

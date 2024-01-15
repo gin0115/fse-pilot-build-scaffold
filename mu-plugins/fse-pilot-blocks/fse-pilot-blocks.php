@@ -1,6 +1,6 @@
 <?php
 /**
- * The Build Processes Demo blocks plugin bootstrap file.
+ * The FSE Pilot blocks plugin bootstrap file.
  *
  * @since       0.1.0
  * @version     0.1.0
@@ -10,7 +10,7 @@
  * @noinspection    ALL
  *
  * @wordpress-plugin
- * Plugin Name:             Build Processes Demo Blocks
+ * Plugin Name:             FSE Pilot Blocks
  * Description:             Example block scaffolded with Create Block tool.
  * Version:                 0.1.0
  * Requires at least:       6.1

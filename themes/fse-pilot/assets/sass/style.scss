@@ -26,15 +26,16 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 */
+
 /*
  * Control the hover stylings of outline block style.
  * Unnecessary once block styles are configurable via theme.json
  * https://github.com/WordPress/gutenberg/issues/42794
  */
-.wp-block-button.is-style-outline > .wp-block-button__link:not(.has-background):hover {
-  background-color: var(--wp--preset--color--secondary);
-  color: var(--wp--preset--color--base);
-  border-color: var(--wp--preset--color--secondary);
+ .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--base);
+	border-color: var(--wp--preset--color--secondary);
 }
 
 /*
@@ -42,7 +43,6 @@ GNU General Public License for more details.
  * https://github.com/WordPress/gutenberg/issues/42319
  */
 a {
-  text-decoration-thickness: 0.0625em !important;
-  text-underline-offset: 0.15em;
+	text-decoration-thickness: .0625em !important;
+	text-underline-offset: .15em;
 }
-/*# sourceMappingURL=style.css.map */

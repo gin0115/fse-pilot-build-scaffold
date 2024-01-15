@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Default footer
- * Slug: block-canvas/footer
+ * Slug: fse-pilot/footer
  * Categories: footer
  * Block Types: core/template-part/footer
  */
@@ -17,15 +17,16 @@
 	<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 		<!-- wp:paragraph {"align":"center"} -->
 		<p class="has-text-align-center">
-            <?php
-                /* Translators: WordPress link. */
-                $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'block-canvas' ) ) . '" rel="nofollow">WordPress</a>';
-                echo sprintf(
-                    esc_html__( 'Designed with %1$s', 'block-canvas' ),
-                    $wordpress_link
-                );
-            ?>
-        </p>
+			<?php
+				$fse_pilot_wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'fse-pilot' ) ) . '" rel="nofollow">WordPress</a>';
+
+				printf(
+					/* translators: %s: WordPress. */
+					esc_html__( 'Designed with %1$s', 'fse-pilot' ),
+					wp_kses_post( $fse_pilot_wordpress_link )
+				);
+				?>
+		</p>
 		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->

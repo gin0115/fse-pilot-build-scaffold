@@ -35,6 +35,8 @@
 
     "wp-cli/i18n-command": "^2.4",
 
+	"wpackagist-plugin/create-block-theme": "^1.13.8",
+
     "wp-coding-standards/wpcs": "^3",
     "phpcompatibility/phpcompatibility-wp": "*",
 

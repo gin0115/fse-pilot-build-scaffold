@@ -1,60 +1,104 @@
 <?php
 /**
- * Block Canvas functions and definitions
+ * FSE Pilot functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Block Canvas
- * @since Block Canvas 1.0
+ * @package FSE Pilot
+ * @since FSE Pilot 1.0
  */
 
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * @since FSE Pilot 1.0
+ *
+ * @return void
+ */
+function fse_pilot_theme_support() {
 
-if ( ! function_exists( 'block_canvas_support' ) ) :
+	// Enqueue editor styles.
+	add_editor_style( 'style-editor.css' );
 
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * @since Block Canvas 1.0
-	 *
-	 * @return void
-	 */
-	function block_canvas_support() {
+	// Make theme available for translation.
+	load_theme_textdomain( 'fse-pilot' );
+}
+add_action( 'after_setup_theme', 'fse_pilot_theme_support' );
 
-		// Enqueue editor styles.
-		add_editor_style( 'style.css' );
+/**
+ * Enqueue styles.
+ *
+ * @since FSE Pilot 1.0
+ *
+ * @return void
+ */
+function fse_pilot_theme_styles() {
 
-		// Make theme available for translation.
-		load_theme_textdomain( 'block-canvas' );
+	// Register theme stylesheet.
+	wp_register_style(
+		'fse-pilot-style',
+		get_stylesheet_directory_uri() . '/style.css',
+		array(),
+		wp_get_theme()->get( 'Version' )
+	);
+
+	// Enqueue theme stylesheet.
+	wp_enqueue_style( 'fse-pilot-style' );
+}
+add_action( 'wp_enqueue_scripts', 'fse_pilot_theme_styles' );
+
+/**
+ * Add block style variations.
+ *
+ * @return void
+ */
+function fse_pilot_register_block_styles() {
+
+	$block_styles = array(
+		'core/button' => array(
+			'secondary-button' => __( 'Secondary', 'fse-pilot' ),
+		),
+	);
+
+	foreach ( $block_styles as $block => $styles ) {
+		foreach ( $styles as $style_name => $style_label ) {
+			register_block_style(
+				$block,
+				array(
+					'name'  => $style_name,
+					'label' => $style_label,
+				)
+			);
+		}
 	}
+}
+add_action( 'init', 'fse_pilot_register_block_styles' );
 
-endif;
 
-add_action( 'after_setup_theme', 'block_canvas_support' );
+/**
+ * Load custom block styles only when the block is used.
+ *
+ * @return void
+ */
+function fse_pilot_enqueue_custom_block_styles() {
 
-if ( ! function_exists( 'block_canvas_styles' ) ) :
+	// Scan our styles folder to locate block styles.
+	$files = glob( get_template_directory() . '/assets/css/*.css' );
 
-	/**
-	 * Enqueue styles.
-	 *
-	 * @since Block Canvas 1.0
-	 *
-	 * @return void
-	 */
-	function block_canvas_styles() {
+	foreach ( $files as $file ) {
 
-		// Register theme stylesheet.
-		wp_register_style(
-			'block_canvas-style',
-			get_stylesheet_directory_uri() . '/style.css',
-			array(),
-			wp_get_theme()->get( 'Version' )
+		// Get the filename and core block name.
+		$filename   = basename( $file, '.css' );
+		$block_name = str_replace( 'core-', 'core/', $filename );
+
+		wp_enqueue_block_style(
+			$block_name,
+			array(
+				'handle' => "fse-pilot-block-{$filename}",
+				'src'    => get_theme_file_uri( "assets/styles/{$filename}.css" ),
+				'path'   => get_theme_file_path( "assets/styles/{$filename}.css" ),
+			)
 		);
-
-		// Enqueue theme stylesheet.
-		wp_enqueue_style( 'block_canvas-style' );
-
 	}
-
-endif;
-
-add_action( 'wp_enqueue_scripts', 'block_canvas_styles' );
+}
+add_action( 'init', 'fse_pilot_enqueue_custom_block_styles' );

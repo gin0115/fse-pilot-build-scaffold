@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Comments
- * slug: block-canvas/comments
+ * slug: fse-pilot/comments
  * inserter: no
  */
 
