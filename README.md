@@ -16,7 +16,7 @@ As a rule of thumb, if there is another source of updates for a piece of code, i
 
 ### Theme Structure
 
-This demo project contains a theme called `build-processes-demo` which is a child theme of the [Blockbase](https://wordpress.org/themes/blockbase/) theme. Using Blockbase is **not** a requirement, but it is a good example of a FSE theme.
+This demo project contains a theme called `fse-pilot` which is a child theme of the [Blockbase](https://wordpress.org/themes/blockbase/) theme. Using Blockbase is **not** a requirement, but it is a good example of a FSE theme.
 
 The usage of a child theme is strongly encouraged even if the project is built upon a Twenty\* theme. Rather than modifying the theme directly and disabling updates by renaming it, it is better to create a child theme and use the Twenty\* theme as a parent theme. That way, we can still benefit from fixes in the template theme **and** it makes it much easier to figure out what the customizations were when the inevitable redesign rolls around in 3-5 years.
 
@@ -80,7 +80,7 @@ FSE template parts are included in this to show desired folder structure only. Y
 
 ### Gutenberg blocks
 
-All custom-built blocks must be placed in a mu-plugin. The demo project contains a mu-plugin called `build-processes-demo-blocks` which exemplifies building two blocks called `build-processes-demo/foobar` and `build-processes-demo/spamham`, respectively.
+All custom-built blocks must be placed in a mu-plugin. The demo project contains a mu-plugin called `fse-pilot-blocks` which exemplifies building two blocks called `fse-pilot/foobar` and `fse-pilot/spamham`, respectively.
 
 By separating the blocks from the theme into a mu-plugin, we can ensure that the blocks are always available on the site, even if the theme is changed (e.g., because of a future redesign or as part of the debugging process). Moreover, it forces us, as developers, to think about the blocks as a separate entity from the theme and to design the code as such thus making it easier to reuse them in other projects.
 
@@ -88,7 +88,7 @@ The mu-plugin must contain enough CSS for the block to be functional and not app
 
 ### Features plugin
 
-As part of the effort to decouple the theme from the site's functionality, we are also requiring a features plugin that contains all the custom functionality of the site. The demo project contains a plugin called `build-processes-demo-features` which contains a custom post type registration and some basic scaffolding.
+As part of the effort to decouple the theme from the site's functionality, we are also requiring a features plugin that contains all the custom functionality of the site. The demo project contains a plugin called `fse-pilot-features` which contains a custom post type registration and some basic scaffolding.
 
 As far as the mu-plugin's assets are concerned, these follows the same folder structure as the theme (see above).
 
@@ -126,7 +126,7 @@ The standardized build processes use the `@wordpress/scripts` npm package for bu
 
 To keep in line with this convention, the CSS assets are also to be built into the `build` folder with the `src` folder containing the source files.
 
-If you don't need a build step for your single-purpose CSS and JS files, you can remove the `build` folder and move the files in the `src` folder to the root of the `css` and `js` folders. But if you're using a build process for them, as we recommend, then please use this folder structure as a convention. [Read this comment for more info](https://github.com/a8cteam51/build-processes-demo/issues/17#issuecomment-1379277392).
+If you don't need a build step for your single-purpose CSS and JS files, you can remove the `build` folder and move the files in the `src` folder to the root of the `css` and `js` folders. But if you're using a build process for them, as we recommend, then please use this folder structure as a convention. [Read this comment for more info](https://github.com/a8cteam51/fse-pilot/issues/17#issuecomment-1379277392).
 
 ### Do I need to use everything in this demo project?
 
@@ -138,7 +138,7 @@ Similarly, if your project is English-only (and likely to remain so), then you d
 
 If your project isn't using WooCommerce, it might be tempting to remove the `team51-tracking` git module. Over time, that module has incorporated auto-opt-in for other plugins as well, like Sensei, and is likely to keep evolving.
 
-Moreover, there is always a possibility that WooCommerce will be included at some point in the future. So it's better to keep the module in place and just ignore it. [Read more about it here](https://github.com/a8cteam51/build-processes-demo/issues/19#issuecomment-1379270537).
+Moreover, there is always a possibility that WooCommerce will be included at some point in the future. So it's better to keep the module in place and just ignore it. [Read more about it here](https://github.com/a8cteam51/fse-pilot/issues/19#issuecomment-1379270537).
 
 ### Why aren't we using an .nvmrc file?
 

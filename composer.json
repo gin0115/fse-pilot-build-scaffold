@@ -1,14 +1,14 @@
 {
-  "name": "a8cteam51/build-processes-demo",
+  "name": "a8cteam51/fse-pilot",
   "type": "wordpress-project",
 
   "description": "A demo project for showcasing standardized build processes for various asset types.",
-  "homepage": "https://build-processes-demo-production.mystagingwebsite.com",
+  "homepage": "https://fse-pilot-production.mystagingwebsite.com",
   "license": "GPL-2.0-or-later",
   "authors": [
     {
       "name": "Contributors",
-      "homepage": "https://github.com/a8cteam51/build-processes-demo/graphs/contributors"
+      "homepage": "https://github.com/a8cteam51/fse-pilot/graphs/contributors"
     }
   ],
 
@@ -33,9 +33,6 @@
   "require-dev": {
     "a8cteam51/team51-configs": "dev-trunk",
 
-    "wpackagist-theme/blockbase": "*",
-    "wpackagist-plugin/woocommerce": "*",
-
     "wp-cli/i18n-command": "^2.4",
 
     "wp-coding-standards/wpcs": "^3",
@@ -47,21 +44,17 @@
   "scripts": {
     "format:php": [
       "@format:php:theme",
-      "@format:php:blocks",
-      "@format:php:features"
+      "@format:php:blocks"
     ],
-    "format:php:theme": "phpcbf --standard=./themes/build-processes-demo/.phpcs.xml --basepath=. ./themes/build-processes-demo -v",
-    "format:php:blocks": "phpcbf --standard=./mu-plugins/build-processes-demo-blocks/.phpcs.xml --basepath=. ./mu-plugins/build-processes-demo-blocks -v",
-    "format:php:features": "phpcbf --standard=./mu-plugins/build-processes-demo-features/.phpcs.xml --basepath=. ./mu-plugins/build-processes-demo-features -v",
+    "format:php:theme": "phpcbf --standard=./themes/fse-pilot/.phpcs.xml --basepath=. ./themes/fse-pilot -v",
+    "format:php:blocks": "phpcbf --standard=./mu-plugins/fse-pilot-blocks/.phpcs.xml --basepath=. ./mu-plugins/fse-pilot-blocks -v",
 
     "lint:php": [
       "@lint:php:theme",
-      "@lint:php:blocks",
-      "@lint:php:features"
+      "@lint:php:blocks"
     ],
-    "lint:php:theme": "phpcs --standard=./themes/build-processes-demo/.phpcs.xml --basepath=. ./themes/build-processes-demo -v",
-    "lint:php:blocks": "phpcs --standard=./mu-plugins/build-processes-demo-blocks/.phpcs.xml --basepath=. ./mu-plugins/build-processes-demo-blocks -v",
-    "lint:php:features": "phpcs --standard=./mu-plugins/build-processes-demo-features/.phpcs.xml --basepath=. ./mu-plugins/build-processes-demo-features -v",
+    "lint:php:theme": "phpcs --standard=./themes/fse-pilot/.phpcs.xml --basepath=. ./themes/fse-pilot -v",
+    "lint:php:blocks": "phpcs --standard=./mu-plugins/fse-pilot-blocks/.phpcs.xml --basepath=. ./mu-plugins/fse-pilot-blocks -v",
 
     "internationalize": [
       "@makepot:theme",
@@ -69,24 +62,17 @@
 
       "@makepot:blocks",
       "@updatepo:blocks",
-      "@makejson:blocks",
-
-      "@makepot:features",
-      "@updatepo:features"
+      "@makejson:blocks"
     ],
 
-    "makepot:theme": "wp i18n make-pot themes/build-processes-demo",
-    "updatepo:theme": "wp i18n update-po themes/build-processes-demo/languages/build-processes-demo.pot",
-    "makemo:theme": "wp i18n make-mo themes/build-processes-demo/languages",
+    "makepot:theme": "wp i18n make-pot themes/fse-pilot",
+    "updatepo:theme": "wp i18n update-po themes/fse-pilot/languages/fse-pilot.pot",
+    "makemo:theme": "wp i18n make-mo themes/fse-pilot/languages",
 
-    "makepot:blocks": "wp i18n make-pot mu-plugins/build-processes-demo-blocks",
-    "updatepo:blocks": "wp i18n update-po mu-plugins/build-processes-demo-blocks/languages/build-processes-demo-blocks.pot",
-    "makejson:blocks": "wp i18n make-json mu-plugins/build-processes-demo-blocks/languages --pretty-print --no-purge",
-    "makemo:blocks": "wp i18n make-mo mu-plugins/build-processes-demo-blocks/languages",
-
-    "makepot:features": "wp i18n make-pot mu-plugins/build-processes-demo-features",
-    "updatepo:features": "wp i18n update-po mu-plugins/build-processes-demo-features/languages/build-processes-demo-features.pot",
-    "makemo:features": "wp i18n make-mo mu-plugins/build-processes-demo-features/languages",
+    "makepot:blocks": "wp i18n make-pot mu-plugins/fse-pilot-blocks",
+    "updatepo:blocks": "wp i18n update-po mu-plugins/fse-pilot-blocks/languages/fse-pilot-blocks.pot",
+    "makejson:blocks": "wp i18n make-json mu-plugins/fse-pilot-blocks/languages --pretty-print --no-purge",
+    "makemo:blocks": "wp i18n make-mo mu-plugins/fse-pilot-blocks/languages",
 
     "packages-install": "@composer install --ignore-platform-reqs --no-interaction",
     "packages-update": [

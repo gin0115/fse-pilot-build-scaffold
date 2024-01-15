@@ -10,10 +10,10 @@ defined( 'ABSPATH' ) || exit;
 
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
-foreach ( glob( WPMU_PLUGIN_DIR . '/*/*.php' ) as $bpd_mu_plugin_file ) {
-	$bpd_mu_plugin_data = get_plugin_data( $bpd_mu_plugin_file, false, false );
-	if ( ! empty( $bpd_mu_plugin_data['Name'] ) ) {
-		require_once $bpd_mu_plugin_file;
+foreach ( glob( WPMU_PLUGIN_DIR . '/*/*.php' ) as $fse_pilot_mu_plugin_file ) {
+	$fse_pilot_mu_plugin_data = get_plugin_data( $fse_pilot_mu_plugin_file, false, false );
+	if ( ! empty( $fse_pilot_mu_plugin_data['Name'] ) ) {
+		require_once $fse_pilot_mu_plugin_file;
 	}
 }
 
