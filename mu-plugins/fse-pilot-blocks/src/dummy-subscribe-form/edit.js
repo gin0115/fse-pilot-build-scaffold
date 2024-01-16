@@ -31,11 +31,9 @@ import './editor.scss';
  */
 export default function Edit() {
 	return (
-		<p { ...useBlockProps() }>
-			{ __(
-				'Todo List – hello from the editor!',
-				'fse-pilot-blocks'
-			) }
-		</p>
+		<form { ...useBlockProps() }>
+			<input type='text' placeholder={ __( 'Your email address' ) }></input>
+			<button type='submit'>{ __( 'Sign Up' ) }</button>
+		</form>
 	);
 }

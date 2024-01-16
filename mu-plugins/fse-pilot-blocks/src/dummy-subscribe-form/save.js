@@ -24,11 +24,9 @@ import { useBlockProps } from '@wordpress/block-editor';
  */
 export default function save() {
 	return (
-		<p { ...useBlockProps.save() }>
-			{ __(
-				'Todo List – hello from the saved content from spamham!',
-				'fse-pilot-blocks'
-			) }
-		</p>
+		<form { ...useBlockProps.save() }>
+			<input type='text' placeholder={ __( 'Your email address' ) }></input>
+			<button type='submit'>{ __( 'Sign Up' ) }</button>
+		</form>
 	);
 }

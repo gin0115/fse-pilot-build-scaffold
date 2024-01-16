@@ -95,8 +95,8 @@ function fse_pilot_enqueue_custom_block_styles() {
 			$block_name,
 			array(
 				'handle' => "fse-pilot-block-{$filename}",
-				'src'    => get_theme_file_uri( "assets/styles/{$filename}.css" ),
-				'path'   => get_theme_file_path( "assets/styles/{$filename}.css" ),
+				'src'    => get_theme_file_uri( "assets/css/{$filename}.css" ),
+				'path'   => get_theme_file_path( "assets/css/{$filename}.css" ),
 			)
 		);
 	}

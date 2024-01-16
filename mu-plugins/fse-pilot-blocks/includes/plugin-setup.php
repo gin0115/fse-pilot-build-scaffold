@@ -13,8 +13,8 @@ defined( 'ABSPATH' ) || exit;
  * @return  void
  */
 function fse_pilot_blocks_init(): void {
-	register_block_type( FSE_PILOT_BLOCKS_DIR . 'build/foobar' );
-	register_block_type( FSE_PILOT_BLOCKS_DIR . 'build/spamham' );
+	register_block_type( FSE_PILOT_BLOCKS_DIR . 'build/dummy-subscribe-form' );
+	register_block_type( FSE_PILOT_BLOCKS_DIR . 'build/table-of-contents' );
 }
 add_action( 'init', 'fse_pilot_blocks_init' );
 
