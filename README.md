@@ -12,6 +12,8 @@ This scaffold is setup as a `/wp-content` root, that means you should clone this
 
 This scaffold has composer dependencies, to install these, open a terminal in the `/wp-content` root and run `composer i`. See more about the scripts this makes available in the section **Code Style & Quality**.
 
+Having run `composer i` you should also see the **Create Block Theme** plugin in your WP Plugins, you'll be using this plugin to sync FSE changes back to theme files.
+
 ### Build Processes
 
 This scaffold will handle all build processes for you, this includes theme CSS, JS and custom Gutenberg blocks. To get setup open a terminal in the `/wp-content` root and run `npm i`.
