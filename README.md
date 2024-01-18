@@ -22,6 +22,10 @@ After a successful install you can run `npm start` to being monitoring all files
 
 See all the available build and linting scripts available in `package.json`.
 
+### Post Feeds Demo Data
+
+To make building the post feeds easier, an XML file of post demo data including excerpts and Featured Images is included in this scaffold, see `thebaseplate.WordPress.xml`, import that to your install as a great timesaver.
+
 ## Project Structure
 
 The `git` repository only keeps track of **custom** content inside the `wp-content` directory. In general, that entails:
