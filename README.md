@@ -24,7 +24,7 @@ See all the available build and linting scripts available in `package.json`.
 
 ### Post Feeds Demo Data
 
-To make building the post feeds easier, an XML file of post demo data including excerpts and Featured Images is included in this scaffold, see `thebaseplate.WordPress.xml`, import that to your install as a great timesaver. Media assets are available in the `posts-assets` folder.
+To make building the post feeds easier, an XML file of post demo data including excerpts and Featured Images is included in this scaffold, see `thebaseplate.WordPress.xml`, import that to your install as a great timesaver. Media assets are available in the `post-assets` folder.
 
 ## Project Structure
 
