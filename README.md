@@ -63,3 +63,7 @@ This project uses PHP CodeSniffer for linting PHP files and the wrappers provide
 While JS/TS/CSS/SCSS linting should be configuration-free (using the defaults provided by `@wordpress/scripts`), the PHP linting requires a configuration file called `phpcs.xml.dist` which is located [in the Composer dependency `a8cteam51/team51-configs`](https://github.com/a8cteam51/team51-configs). Ensure you have run `composer i` to pull down this dependency.
 
 Moreover, you will likely notice `.phpcs.xml` files sprinkled throughout the project (e.g., in the child theme and in the features plugin). These files are used to enhance the default configuration provided by the centralized `phpcs.xml.dist` file for the files inside the respective folders. For example, they add checks for using the correct text domain for the theme and the features plugin, respectively, or for using the correct prefixes for global variables.
+
+---
+
+_Media assets are AI-generated, except `block-theme-test-project-image-5.jpg', which is a photo by Nik on <a href="https://unsplash.com/photos/selective-focus-photography-of-blue-lego-minifigure-l4ADb9OVqTY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>._
