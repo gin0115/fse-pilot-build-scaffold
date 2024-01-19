@@ -26,6 +26,10 @@ See all the available build and linting scripts available in `package.json`.
 
 To make building the post feeds easier, an XML file of post demo data including excerpts and Featured Images is included in this scaffold, see `thebaseplate.WordPress.xml`, import that to your install as a great timesaver. Media assets are available in the `post-assets` folder.
 
+### Design
+
+[Designs are available in Figma.](https://www.figma.com/file/eb7htmHX8L9k6od2qICj2k/%F0%9F%9B%A0%EF%B8%8F-FSE-Pilot-Build-Theme?type=design&node-id=1278%3A251&mode=design&t=asAh1ekkPZsSxUPI-1)
+
 ## Project Structure
 
 The `git` repository only keeps track of **custom** content inside the `wp-content` directory. In general, that entails:
