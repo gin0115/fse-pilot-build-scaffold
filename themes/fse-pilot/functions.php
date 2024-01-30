@@ -102,3 +102,14 @@ function fse_pilot_enqueue_custom_block_styles() {
 	}
 }
 add_action( 'init', 'fse_pilot_enqueue_custom_block_styles' );
+
+/**
+ * This is wrong
+ *
+ * @param integer $foo
+ * @param string  $banana Has title.
+ * @return boolean
+ */
+function fseSomething( int $foo, string $banana ) {
+	return true;
+}
