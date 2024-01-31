@@ -42,3 +42,14 @@ jobs:
 
       - name: Run PHP_CodeSniffer
         run: composer run-script lint:php
+
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_CHANNEL: general
+          SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+          SLACK_ICON: https://avatars.githubusercontent.com/u/73898108?s=48&v=4
+          SLACK_MESSAGE: "PR by ${{ github.actor }} was a ${{ job.status }}"
+          SLACK_TITLE: FSE Pilot Project PR
+          SLACK_USERNAME: Codeable Vetting
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
