@@ -42,9 +42,9 @@ jobs:
 
       - name: Run PHP_CodeSniffer
         run: composer run-script lint:php
-        continue-on-error: true
 
       - name: Slack Notification
+        if: success() || failure()
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_CHANNEL: general
