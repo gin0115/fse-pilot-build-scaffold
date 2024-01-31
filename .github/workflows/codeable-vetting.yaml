@@ -16,24 +16,18 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Slack Notification
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_CHANNEL: general
-          SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
-          SLACK_ICON: https://github.com/rtCamp.png?size=48
-          SLACK_MESSAGE: 'Post Content :rocket:'
-          SLACK_TITLE: Post Title
-          SLACK_USERNAME: glynnBot
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+
       - name: Report Status
+        uses: ravsamhq/notify-slack-action@v2
         if: always()
-        uses: ravsamhq/notify-slack-action@v1
         with:
           status: ${{ job.status }}
-          notify_when: 'failure'
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          notification_title: "{workflow} has {status_message}"
+          message_format: "{emoji} *{workflow}* {status_message} in <{repo_url}|{repo}>"
+          footer: "Linked Repo <{repo_url}|{repo}> | <{workflow_url}|View Workflow>"
+          env:
+            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
       - name: Example Output
         run: |
           echo "Hello"
