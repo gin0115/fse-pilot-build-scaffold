@@ -26,4 +26,4 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.ACTION_MONITORING_SLACK }}
       - name: Test
         run: |
-          echo "This is an example" >> $GITHUB_OUTPUT
+          echo "This is an example"
