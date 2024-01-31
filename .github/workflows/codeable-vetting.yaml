@@ -1,8 +1,10 @@
 name: Codeable_Vetting
 
 on:
+  push:
+    branches: [ trunk, develop ]
   pull_request:
-    branches: [ trunk ]
+    branches: [ trunk, develop ]
 jobs:
   build:
     strategy:
@@ -15,10 +17,10 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Report Status
-  if: always()
-  uses: ravsamhq/notify-slack-action@v1
-  with:
-    status: ${{ job.status }}
-    notify_when: 'failure'
-  env:
-    SLACK_WEBHOOK_URL: ${{ secrets.ACTION_MONITORING_SLACK }}
+        if: always()
+        uses: ravsamhq/notify-slack-action@v1
+        with:
+          status: ${{ job.status }}
+          notify_when: 'failure'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.ACTION_MONITORING_SLACK }}
